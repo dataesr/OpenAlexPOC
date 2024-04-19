@@ -33,7 +33,7 @@ export default function Signatures({ data, field, filters, perimeter, topSize })
         let affiliations = [];
         if (field === 'raw_affiliation') {
           // TODO, can be improve by removing ", ***" or "[***]" or "(***)" or "*** ()"
-          affiliations = authorship.raw_affiliation_string.split(';')
+          affiliations = authorship.raw_affiliation_strings
             .map((affiliation) => affiliation.trim());
         } else if (field === 'institution_name') {
           affiliations = authorship.institutions

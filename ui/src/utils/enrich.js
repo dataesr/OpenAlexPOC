@@ -20,7 +20,7 @@ function isInAuthorship(filter, authorship) {
   const { type, query } = filter;
   const field = [...type.split('.')].pop();
   if (!field || !query) return false;
-  if (field === 'search') return isInAffiliation(query, authorship.raw_affiliation_string);
+  if (field === 'search') return isInAffiliation(query, authorship.raw_affiliation_strings.join('; '));
   if (!authorship?.institutions?.length) return false;
   return (
     authorship.institutions
